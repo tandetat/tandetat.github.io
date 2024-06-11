@@ -1,12 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - tandetat 
+  - diogxd
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - csc-324-sga-assisting-tool/csc-324-sga-assisting-tool
+  - tandetat/Iterative-Hard-Thresholding-and-Normalized-Iterative-Hard-Thresholding
+  - viniono/parallel_black_scholes
+  - tandetat/evol_sim
+  - tandetat/Analysis-of-Duffing-Oscillators

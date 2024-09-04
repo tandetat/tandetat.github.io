@@ -6,13 +6,12 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Diogo
 last_name: Tandeta Tartarotti
 email: tandetat@grinnell.edu
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+description: # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: computer-science, physics, software-engineering, math, jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -79,7 +78,7 @@ flickr_id: # your flickr id
 github_username: tandetat # your GitHub user name
 gitlab_username: # your GitLab user name
 ieee_id: # your ieeexplore.ieee.org/author/id
-instagram_id: diogotandeta # your instagram id
+instagram_id: # your instagram id
 kaggle_id: # your kaggle id
 keybase_username: # your keybase user name
 lastfm_id: # your lastfm id
@@ -129,8 +128,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: there are many owls outside # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: placeholder # blog_name will be displayed in your blog page
+blog_description:
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 

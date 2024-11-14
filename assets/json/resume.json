@@ -1,10 +1,10 @@
 {
   "basics": {
     "name": "Diogo Tandeta Tartarotti",
-    "label": "Computer Scientist, Physicist",
+    "label": "Software Engineer, Physicist",
     "image": "",
-    "email": "tandetat@grinnell.edu",
-    "phone": "(641) 510-6840",
+    "email": "diogotartarotti@icloud.com",
+    "phone": "+55 (21) 99501-2780",
     "url": "https://tandetat.github.io",
     "summary": "",
     "location": {
@@ -83,7 +83,7 @@
     {
       "name": "Programming Languages",
       "icon": "fa-solid fa-hashtag",
-      "keywords": ["TypeScript", "JavaScript", "Python", "Rust", "C", "C++", "Java", "Racket", "Golang", "Bash", "SQL", "Ruby"]
+      "keywords": ["TypeScript", "JavaScript", "Python", "Rust", "C", "C++", "Java", "PHP", "Racket", "Golang", "Bash", "SQL", "Ruby"]
     },
     {
       "name": "Tools and Frameworks",
@@ -91,6 +91,7 @@
       "keywords": [
         "Linux",
         "Git",
+        "Docker",
         "Node.js",
         "NextJS",
         "Ruby on Rails",
@@ -104,7 +105,16 @@
         "Pandas",
         "SciPy"
       ]
+    },
+    {
+      "name": "Development Methodologies",
+      "icon": "fa-solid fa-hashtag",
+      "keywords": [
+        "Scrum",
+        "Agile"
+      ]
     }
+
   ],
   "languages": [
     {
@@ -125,9 +135,9 @@
   ],
   "interests": [
     {
-      "name": "Computer Science and Programming",
+      "name": "Software Development and Computer Science",
       "icon": "fa-solid fa-tag",
-      "keywords": ["Sustainable & Green Computing", "Programming Languages Theory & Implementation", "Compilers"]
+      "keywords": ["Web Development", "Desktop Engineering", "Backend Development", "AI Engineering" ,"Sustainable & Green Computing", "Programming Languages Theory & Implementation"]
     },
     {
       "name": "Physics",

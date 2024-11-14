@@ -109,12 +109,8 @@
     {
       "name": "Development Methodologies",
       "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Scrum",
-        "Agile"
-      ]
+      "keywords": ["Scrum", "Agile"]
     }
-
   ],
   "languages": [
     {
@@ -137,7 +133,14 @@
     {
       "name": "Software Development and Computer Science",
       "icon": "fa-solid fa-tag",
-      "keywords": ["Web Development", "Desktop Engineering", "Backend Development", "AI Engineering" ,"Sustainable & Green Computing", "Programming Languages Theory & Implementation"]
+      "keywords": [
+        "Web Development",
+        "Desktop Engineering",
+        "Backend Development",
+        "AI Engineering",
+        "Sustainable & Green Computing",
+        "Programming Languages Theory & Implementation"
+      ]
     },
     {
       "name": "Physics",

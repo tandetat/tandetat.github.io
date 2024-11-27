@@ -92,18 +92,24 @@
         "Linux",
         "Git",
         "Docker",
+        "Firebase",
         "Node.js",
         "NextJS",
         "Ruby on Rails",
         "React",
         "Yarn",
+        "NoSQL Databases",
+        "Relational Databases",
         "Poetry",
         "Jest",
         "WebAssembly",
         "Jupyter Notebook",
         "NumPy",
         "Pandas",
-        "SciPy"
+        "SciPy",
+        "Matplotlib",
+        "Jupyter Notebook",
+        "Cuda"
       ]
     },
     {

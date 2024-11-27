@@ -169,7 +169,7 @@
       "highlights": ["Machine Learning", "Neural Networks", "Genetic Algorithm", "WebAssembly", "Rust", "Canvas API"],
       "startDate": "2022-06-01",
       "endDate": "2022-06-01",
-      "url": "github.com/tandetat/evol_sim"
+      "url": "https://github.com/tandetat/evol_sim"
     },
     {
       "name": "Iterative Hard Thresholding and Normalized Iterative Hard Thresholding",

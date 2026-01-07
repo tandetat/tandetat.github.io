@@ -1,246 +1,219 @@
-/* This is from Bear Blog (bearblog.dev)
-/* Font */
-@import url("https://api.fontshare.com/v2/css?f[]=satoshi@700,701,401,400&display=swap");
+/* Fontshare-inspired dark yellow theme */
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap");
 
-/* Settings */
 :root {
-	--color-dark: #1a1a1a;
-	--color-light: #fafafa;
-	--color-primary: #1a8fe3;
+	--black-b: #10100e;
+	--gray-d3: #191815;
+	--gray-d2: #30302b;
+	--gray-d1: #606055;
+	--gray-b: #c0c0ab;
+	--gray-l1: #e8e8cf;
+	--gray-l2: #f8f8dd;
+	--white-b: #FFFFE3;
 	--spacing: 1.5rem;
 	--font-stack: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont,
-		"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	--max-width: 1600px;
+		"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+	--max-width: 1200px;
 }
 
-/* Dark mode settings */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-dark: #fafafa;
-		--color-light: #1a1a1a;
-	}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-/* Basic styles */
+html {
+	font-size: 16px;
+	line-height: 1.6;
+	-webkit-text-size-adjust: 100%;
+}
+
 body {
-	background: var(--color-light);
-	color: var(--color-dark);
-	padding: 5vw;
+	background: var(--black-b);
+	color: var(--white-b);
 	font-family: var(--font-stack);
-	font-size: 1.5rem;
-	line-height: 1.7;
-	display: flex;
-	flex-wrap: wrap;
-	gap: calc(var(--spacing) * 2);
+	font-size: 1.125rem;
+	padding: 4rem;
 	min-height: 100vh;
 	max-width: var(--max-width);
 	margin: 0 auto;
 }
 
-* {
-	box-sizing: border-box;
-}
-
-header,
-main,
-footer {
-	max-width: 60ch;
-	margin-inline: auto;
-	width: 100%;
-}
-
-/* Header styles */
-header {
-	padding-bottom: var(--spacing);
-	flex-basis: 12rem;
-	flex-grow: 1;
-}
-
-/* Main content styles */
-main {
-	flex-basis: 0;
-	flex-grow: 999;
-	padding-bottom: calc(var(--spacing) * 2);
-	flex-basis: 40rem;
-}
-
-/* Footer styles */
-footer {
-	min-width: 100%;
-	flex-basis: 0;
-	flex-grow: 1;
-	padding-top: var(--spacing);
-}
-
-/* Link styles */
+/* Links */
 a {
-	color: currentColor;
-	text-decoration-color: var(--color-primary);
-	text-decoration-thickness: 0.2ex;
-	text-underline-offset: 0.3ex;
+	color: var(--white-b);
+	text-decoration: underline;
+	text-decoration-color: var(--gray-d1);
+	text-underline-offset: 0.15em;
+	transition: text-decoration-color 0.2s;
 }
 
 a:hover {
-	text-decoration-thickness: 0.3ex;
+	text-decoration-color: var(--white-b);
 }
 
-/* Image styles */
-img {
-	display: block;
-	max-width: 100%;
-	height: auto;
-}
-
-/* Heading styles */
-h1,
-h2,
-h3,
-h4,
-h5 {
+/* Headings */
+h1, h2, h3, h4, h5 {
 	font-weight: 700;
-	line-height: 1.3;
-	text-wrap: balance;
+	line-height: 1.2;
+	color: var(--white-b);
 }
 
-/* Adjustments for different heading levels */
 h1 {
-	font-size: 3.55rem;
+	font-size: 3rem;
+	margin-bottom: 0.5rem;
 }
 
 h2 {
-	font-size: 2.66rem;
+	font-size: 1.75rem;
+	margin-top: 2.5rem;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--gray-d2);
 }
 
 h3 {
-	font-size: 2rem;
+	font-size: 1.25rem;
 }
 
-h4 {
-	font-size: 1.5rem;
+/* Muted text */
+.muted, time {
+	color: var(--gray-b);
 }
 
-h5 {
-	font-size: 1.13rem;
+/* Header */
+header {
+	margin-bottom: 3rem;
 }
 
-/* List styles */
-ul,
-ol {
-	padding-inline-start: var(--spacing);
+header h1 {
+	margin-bottom: 0.25rem;
+}
+
+header a {
+	margin-right: 1rem;
+}
+
+/* Main */
+main {
+	max-width: 65ch;
+}
+
+/* Lists */
+ul, ol {
+	padding-left: 1.25rem;
 }
 
 li {
-	margin-block-start: var(--spacing);
+	margin-bottom: 0.75rem;
 }
 
-/* Blockquote styles */
-blockquote {
-	padding-inline-start: var(--spacing);
-	border-inline-start: 0.3em solid;
-	font-style: italic;
-	font-size: 1.5rem;
-}
-
-/* Flow and rhythm */
-:is(h1, h2, h3, h4, h5, blockquote) {
-	margin-block-end: calc(var(--spacing) / 2);
-}
-
-:is(h1, h2, h3, h4, h5)+* {
-	margin-block-start: calc(var(--spacing) / 3);
-}
-
-:is(h1, h2, h3, h4, h5)+ :where(h2, h3, h4, h5) {
-	margin-block-start: calc(var(--spacing) * 2);
-}
-
-/* Line lengths */
-blockquote {
-	max-width: 50ch;
-}
-
-h1 {
-	max-width: 24ch;
-}
-
-h2,
-h3 {
-	max-width: 32ch;
-}
-
-/* Bear Content */
-.title {
-	text-decoration: none;
-}
-
-.title h1 {
-	font-size: 2rem;
-	margin-top: calc(var(--spacing) / 2);
-}
-
-nav {
-	position: sticky;
-	top: var(--spacing);
-}
-
-nav p {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: var(--spacing);
-	row-gap: 0;
-}
-
-@media screen and (min-width: 1000px) {
-	nav p {
-		flex-direction: column;
-	}
-}
-
-ul.blog-posts {
-	list-style-type: none;
-	padding: unset;
-}
-
-ul.blog-posts li {
-	display: flex;
-	flex-direction: column;
-}
-
-@media screen and (min-width: 600px) {
-	ul.blog-posts li {
-		flex-direction: row;
-		gap: calc(var(--spacing) / 2);
-	}
-}
-
-ul.blog-posts li span {
-	min-width: 11ch;
-}
-
-time {
-	opacity: 0.5;
-	font-style: normal;
-}
-
-.highlight,
-.code {
-	padding: 1px var(--spacing);
-	background-color: rgba(0, 0, 0, 0.1);
+/* Code */
+code {
+	font-family: "SF Mono", "Fira Code", monospace;
+	font-size: 0.9em;
+	background: var(--gray-d3);
+	padding: 0.15em 0.4em;
 	border-radius: 3px;
-	overflow-x: auto;
-	line-height: 1.2;
 }
 
+/* Tables */
 table {
 	width: 100%;
+	border-collapse: collapse;
 }
 
-th {
-	text-align: left;
+td {
+	padding: 0.25rem 0;
 }
 
+/* Strong/Em */
+strong {
+	font-weight: 700;
+}
+
+em {
+	font-style: italic;
+	color: var(--gray-l1);
+}
+
+/* HR */
 hr {
-	border-color: rgba(0, 0, 0, 0.1);
+	border: none;
+	border-top: 1px solid var(--gray-d2);
+	margin: 2rem 0;
+}
+
+/* Paragraphs */
+p {
+	margin-bottom: 1rem;
+}
+
+/* CV-specific styles */
+.cv header {
+	margin-bottom: 2rem;
+}
+
+.cv main {
+	max-width: none;
+}
+
+.cv main > ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.cv main > ul > li {
+	margin-bottom: 2rem;
+}
+
+.cv main > ul > li > table {
+	margin-bottom: 0.5rem;
+}
+
+.cv main > ul > li > table td:last-child {
+	white-space: nowrap;
+	text-align: right;
+	vertical-align: top;
+	padding-left: 1rem;
+}
+
+.cv main > ul > li > table td:first-child {
+	vertical-align: top;
+}
+
+.cv main > ul > li > ul {
+	margin-top: 0.5rem;
+}
+
+.cv main > ul > li > ul li {
+	margin-bottom: 0.5rem;
+	color: var(--gray-l1);
+}
+
+/* Smaller text for CV bullet points */
+.cv main > ul > li > ul p {
+	font-size: 1rem;
+	line-height: 1.5;
+	margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	body {
+		padding: 2rem 1.5rem;
+		font-size: 1rem;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	.cv main > ul > li > table td:last-child {
+		white-space: normal;
+	}
 }

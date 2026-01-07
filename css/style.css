@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5 {
 
 h1 {
 	font-size: 3rem;
-	margin-bottom: 0.5rem;
+	margin: 0 0 0.5rem 0;
 }
 
 h2 {
@@ -85,6 +85,7 @@ h3 {
 header {
 	margin-bottom: 3rem;
 	position: relative;
+	padding: 0;
 }
 
 header img {
@@ -106,9 +107,28 @@ header a {
 	margin-right: 1rem;
 }
 
+nav {
+	font-size: 1.5rem;
+}
+
+nav p {
+	margin: 0;
+}
+
+nav a, header .title {
+	text-decoration: none;
+}
+
+nav a:hover, header .title:hover {
+	text-decoration: underline;
+	text-decoration-color: var(--white-b);
+}
+
 /* Main */
 main {
 	max-width: 65ch;
+	padding: 0;
+	margin: 0;
 }
 
 /* Lists */
@@ -164,6 +184,16 @@ p {
 /* CV-specific styles */
 .cv header {
 	margin-bottom: 2rem;
+	display: block;
+}
+
+.cv header .title {
+	display: block;
+	margin-right: 0;
+}
+
+.cv header h1 {
+	margin-bottom: 0.5rem;
 }
 
 .cv main {

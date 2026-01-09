@@ -110,8 +110,14 @@ header .title {
 	padding: 0;
 }
 
-header a {
-	margin-right: 1rem;
+.contact-info {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+}
+
+.contact-info a {
+	margin-right: 0;
 }
 
 nav {

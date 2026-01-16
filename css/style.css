@@ -123,6 +123,8 @@ header .title {
 nav {
 	font-size: 1.5rem;
 	margin-top: 1rem;
+	display: flex;
+	gap: 1.5rem;
 }
 
 nav a, header .title {
@@ -250,6 +252,12 @@ p {
 	margin-bottom: 0;
 }
 
+/* Contact section */
+body > strong {
+	display: block;
+	margin-top: 2rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
 	body {
@@ -267,9 +275,10 @@ p {
 
 	.profile-photo {
 		position: static;
+		display: block;
 		width: 150px;
 		height: 150px;
-		margin-top: 2rem;
+		margin: 1.5rem 0;
 	}
 
 	.cv main > ul > li > table td:last-child {

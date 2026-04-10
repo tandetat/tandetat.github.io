@@ -1,4 +1,0 @@
-# Robots.txt for diogotartarotti.com
-
-# Allow all search engines to crawl the site
-User-agent: *

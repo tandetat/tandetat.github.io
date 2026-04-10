@@ -1,5 +1,12 @@
+@font-face {
+	font-family: "Satoshi";
+	src: url("../fonts/Satoshi-Variable.woff2")
+		format("woff2-variations");
+	font-weight: 400 700;
+	font-display: swap;
+}
+
 /* Fontshare-inspired dark yellow theme */
-/* Font loaded via preload in HTML to avoid render-blocking */
 
 :root {
 	--black-b: #10100e;

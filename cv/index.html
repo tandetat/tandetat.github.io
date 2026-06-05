@@ -83,32 +83,53 @@
 				</table>
 				<ul>
 					<li>
-						<p>Built face anonymization pipeline from scratch (186 commits):
-							AuraFace-v1 detection, custom MyPaint-style brush engine with
-							resolution-aware stroke density, GPU/CPU hardware abstraction,
-							deployed on RunPod.</p>
+						<p>Built the app's social layer 0→1 on DynamoDB: a follow
+							graph (LSIs for O(1) lookups, atomic transactions,
+							visibility-based access) and a full Comments feature —
+							threaded replies, likes, translations, moderation,
+							notifications — shipped end-to-end across the Go backend
+							(~40-PR stack) and React Native app (~25-PR stack).</p>
 					</li>
 					<li>
-						<p>7x faster profile loads (1800ms → 250ms): parallelized SSR with
-							React 19 <code>use()</code>, client-side prefetching, moved
-							follow lists to streaming. Backend: Redis pipelining, batched
-							DynamoDB, time-bucketed CDN URL caching.</p>
+						<p>Built a telemetry platform from scratch: OTel Collector +
+							Refinery on Fargate behind a JWT API gateway. Migrated 3
+							services off Sentry to OpenTelemetry and tuned tail sampling
+							321M → 75M spans/month, with tracing spanning app → API →
+							Step Functions → lambdas.</p>
 					</li>
 					<li>
-						<p>Shipped social graph 0→1: single-table DynamoDB with LSI for
-							O(1) lookups and atomic transactions, cursor pagination,
-							visibility-based access control.</p>
+						<p>Built GPU face-anonymization pipeline from scratch (186
+							commits): AuraFace detection, custom MyPaint-style brush
+							engine, GPU/CPU abstraction. Later replaced it with an AWS
+							Rekognition adapter, retiring the GPU service and ~6K LOC.</p>
 					</li>
 					<li>
-						<p>Rewrote web data layer: replaced custom SWR abstraction with
-							swagger-generated fetchers and typed cache keys (161 files,
-							19K LOC). Migrated mobile to TanStack Query.</p>
+						<p>Overhauled image delivery for a social fashion app — a
+							global, infinite-scroll lookbook of user outfits where images
+							are the bulk of every screen: WebP variants from the resize
+							Lambda cut feed loads 85–90% (7.2MB → 810KB/viewport);
+							CloudFront Origin Shield and all-edge coverage cut RTT for
+							the 61% of users outside NA/EU.</p>
 					</li>
 					<li>
-						<p>Built trust & safety 0→1: blocking (system-wide filtering
-							across discovery/likes/notifications), reporting with rate
-							limiting and Slack alerts, account deletion with batched
-							cleanup (11-step orchestration).</p>
+						<p>7x faster profile loads (1800ms → 250ms): parallelized SSR
+							with React 19 <code>use()</code>, client-side prefetching,
+							and streaming follow lists. On the backend, batched
+							hydration (notifications, images, follow status),
+							cache-first lookups, Redis pipelining, and batched CDN URL
+							signing and cache writes.</p>
+					</li>
+					<li>
+						<p>Led backend refactors: rebuilt the DynamoDB data-access
+							layer (killed read-modify-write across 19+ sites), moved to
+							typed contract-based error handling, and enforced hexagonal
+							boundaries.</p>
+					</li>
+					<li>
+						<p>Built trust & safety 0→1: blocking, reporting with rate
+							limiting, and Step Functions account deletion. Hardened all
+							LLM inputs against prompt injection across every provider
+							adapter (Gemini, Gemma, OpenAI).</p>
 					</li>
 				</ul>
 			</li>
@@ -230,35 +251,22 @@
 				</table>
 				<ul>
 					<li>
-						<p><span> <span>Led the development of a mobile and web app for
-									Spaced — a project app to connect space owners
-									and
-									students
-									needing
-									storage in Grinnell, Iowa. </span> </span></p>
+						<p>Led mobile and web build for a two-sided marketplace
+							connecting space owners with students needing summer
+							storage in Grinnell, Iowa.</p>
 					</li>
 					<li>
-						<p><span> <span>Designed and implemented the entire backend for the
-									app using Firebase for user authentication,
-									database of
-									profiles, users,
-									spaces, and owners, and Stripe’s API to handle
-									payment.
-								</span>
-							</span></p>
+						<p>Built backend 0→1: Firebase auth, Firestore for
+							profiles, users, spaces, and owners; Stripe API for
+							payments.</p>
 					</li>
 					<li>
-						<p><span> <span>Integrated front-end and UI with backend through
-									Firebase SDK and Stripe SDK in Flutter. </span>
-							</span>
-						</p>
+						<p>Wired Flutter UI to the backend through the Firebase
+							and Stripe SDKs.</p>
 					</li>
 					<li>
-						<p><span> <span>Connected more than 40 students with members of the
-									local community and alumni that provided summer
-									storage
-								</span>
-							</span></p>
+						<p>Connected 40+ students with local community members and
+							alumni offering summer storage.</p>
 					</li>
 				</ul>
 			</li>
@@ -279,20 +287,10 @@
 				</table>
 				<ul>
 					<li>
-						<p><span> <span>Implemented genetic algorithm and neural network
-									from scratch in Rust and used them to simulate
-									the
-									evolution of
-									birds.
-									Compile and run the simulation to the web
-									browser
-									through
-									WebAssembly,
-									using JavaScript and Canvas API to make frontend
-									and
-									live
-									animate the
-									simulation. </span> </span></p>
+						<p>Built a genetic algorithm and neural network from
+							scratch in Rust to simulate bird evolution. Compiled to
+							WebAssembly; JavaScript and Canvas API render and
+							live-animate the simulation in-browser.</p>
 					</li>
 				</ul>
 			</li>
@@ -313,15 +311,9 @@
 				</table>
 				<ul>
 					<li>
-						<p><span> <span>Implemented Bellman-Ford algorithm to find negative
-									cost cycles in currency graphs. Used the
-									negative cost
-									cycles to
-									find
-									arbitrage opportunities in currency exchange.
-								</span>
-							</span>
-						</p>
+						<p>Implemented Bellman-Ford to detect negative-cost cycles
+							in currency graphs, surfacing arbitrage opportunities
+							across exchange rates.</p>
 					</li>
 				</ul>
 			</li>
@@ -341,18 +333,9 @@
 				</table>
 				<ul>
 					<li>
-						<p><span> <span>Researched and implemented IHT and NIHT algorithms,
-									proving NIHT conditions of convergence with
-									asymmetric
-									restricted
-									isometry constants. Compared IHT, NIHT, and OMP
-									in
-									empirical
-									tests.
-									Enhanced sparse signal recovery understanding
-								</span>
-							</span>
-						</p>
+						<p>Implemented IHT and NIHT; proved NIHT convergence under
+							asymmetric restricted isometry constants. Benchmarked
+							IHT, NIHT, and OMP for sparse signal recovery.</p>
 					</li>
 				</ul>
 			</li>
@@ -371,21 +354,10 @@
 				</table>
 				<ul>
 					<li>
-						<p><span> <span>Implemented a parallel option pricing tool utilizing
-									GPU acceleration, based on the European options
-									solution
-									of the
-									Black-Scholes model. The program calculates call
-									and put
-									prices
-									for
-									provided options, generates an output file with
-									the
-									prices, and
-									reports
-									execution statistics to the terminal. </span>
-							</span>
-						</p>
+						<p>Built a GPU-accelerated option pricer for European
+							options under Black-Scholes. Computes call and put
+							prices, writes results to an output file, and reports
+							execution stats.</p>
 					</li>
 				</ul>
 			</li>
@@ -405,20 +377,10 @@
 				</table>
 				<ul>
 					<li>
-						<p><span> <span>Analyzed non-linear damped, driven harmonic
-									oscillators with Duffing Equation. Employed
-									Euler’s
-									method for
-									numerical
-									integration. Used MatPlotLib to generate graphs
-									for the
-									time
-									series,
-									phase spaces, and the Poincaré sections of the
-									analyzed
-									systems
-								</span>
-							</span></p>
+						<p>Modeled damped, driven nonlinear oscillators via the
+							Duffing equation using Euler integration. Plotted time
+							series, phase spaces, and Poincaré sections with
+							Matplotlib.</p>
 					</li>
 				</ul>
 			</li>
@@ -426,10 +388,12 @@
 		<h2 id="technical-skills">Technical Skills</h2>
 		<div class="itemize">
 			<p><span> <strong>Languages</strong><span>: TypeScript/JavaScript,
-						Python, Rust, Java, Bash, C, C++, Golang, SQL, HTML/CSS, Racket,
+						Python, Golang, Rust, C, Java, C++, SQL, HTML/CSS, Racket,
 						Ruby</span><br />
-					<strong>Technologies/Frameworks</strong><span>: Linux, Git, Node.js,
-						Docker, NextJS, React, Yarn, Jest, WebAssembly, NumPy, SciPy,
+					<strong>Technologies/Frameworks</strong><span>: Linux, Git, Docker, AWS ECS, AWS
+						DynamoDB, React, React
+						Native,
+						Node.js, NextJS, Expo, Yarn, Jest, Echo, NumPy, SciPy,
 						Matplotlib, Pandas, nginx, Ruby on Rails</span><br />
 					<strong>Software Development Methodologies</strong><span>: Scrum,
 						Agile</span><br />

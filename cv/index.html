@@ -83,53 +83,64 @@
 				</table>
 				<ul>
 					<li>
-						<p>Built the app's social layer 0→1 on DynamoDB: a follow
-							graph (LSIs for O(1) lookups, atomic transactions,
-							visibility-based access) and a full Comments feature —
-							threaded replies, likes, translations, moderation,
-							notifications — shipped end-to-end across the Go backend
-							(~40-PR stack) and React Native app (~25-PR stack).</p>
+						<p>Built the social layer 0→1: a follow graph with
+							privacy/visibility rules, and a threaded comments system
+							(replies, likes, on-demand translation, moderation,
+							notifications). Shipped end-to-end across a ~40-PR Go
+							backend stack and a ~25-PR React Native stack.</p>
 					</li>
 					<li>
-						<p>Built a telemetry platform from scratch: OTel Collector +
-							Refinery on Fargate behind a JWT API gateway. Migrated 3
-							services off Sentry to OpenTelemetry and tuned tail sampling
-							321M → 75M spans/month, with tracing spanning app → API →
-							Step Functions → lambdas.</p>
+						<p>Built the company's observability platform from scratch
+							(OpenTelemetry + Refinery on Fargate) and moved 3 services
+							onto it off Sentry. Gave engineers end-to-end traces through
+							the async stack — app, API, Step Functions, lambdas — and
+							tuned sampling to cut trace volume 4x (321M → 75M/month).</p>
 					</li>
 					<li>
-						<p>Built GPU face-anonymization pipeline from scratch (186
-							commits): AuraFace detection, custom MyPaint-style brush
-							engine, GPU/CPU abstraction. Later replaced it with an AWS
-							Rekognition adapter, retiring the GPU service and ~6K LOC.</p>
+						<p>Built a face-anonymization pipeline from scratch to scrub
+							faces from user photos: detected faces and overlaid a
+							graphic over the eyes, rotating, scaling, and cropping it to
+							each face's size and angle and the image resolution. Migrated
+							to AWS Rekognition for stronger edge-case detection
+							(sunglasses, sideways or cropped faces), deleting ~6K
+							lines of now-dead code.</p>
 					</li>
 					<li>
-						<p>Overhauled image delivery for a social fashion app — a
-							global, infinite-scroll lookbook of user outfits where images
-							are the bulk of every screen: WebP variants from the resize
-							Lambda cut feed loads 85–90% (7.2MB → 810KB/viewport);
-							CloudFront Origin Shield and all-edge coverage cut RTT for
-							the 61% of users outside NA/EU.</p>
+						<p>Moved the GPU inference services (background removal, image
+							segmentation) off RunPod serverless onto self-managed AWS
+							ECS GPU instances: an internal load balancer across services,
+							autoscaling on GPU saturation, and models baked into the
+							image with lazy loading to kill cold-start downloads.</p>
 					</li>
 					<li>
-						<p>7x faster profile loads (1800ms → 250ms): parallelized SSR
-							with React 19 <code>use()</code>, client-side prefetching,
-							and streaming follow lists. On the backend, batched
-							hydration (notifications, images, follow status),
-							cache-first lookups, Redis pipelining, and batched CDN URL
-							signing and cache writes.</p>
+						<p>Overhauled image delivery across the outfit feeds, where
+							images are nearly all the bytes on screen: WebP variants from
+							the resize Lambda cut feed payloads 85–90% (7.2MB →
+							810KB/viewport), and CloudFront Origin Shield + all-edge
+							coverage cut load times for the 61% of users outside
+							NA/EU.</p>
 					</li>
 					<li>
-						<p>Led backend refactors: rebuilt the DynamoDB data-access
-							layer (killed read-modify-write across 19+ sites), moved to
-							typed contract-based error handling, and enforced hexagonal
-							boundaries.</p>
+						<p>Made profile loads 7x faster (1800ms → 250ms) on web:
+							parallelized the server-rendered fetches with React 19's
+							<code>use()</code>, deferred follower lists to load on demand
+							instead of during SSR, and batched the feed's per-card user
+							lookups into a single request.</p>
 					</li>
 					<li>
-						<p>Built trust & safety 0→1: blocking, reporting with rate
-							limiting, and Step Functions account deletion. Hardened all
-							LLM inputs against prompt injection across every provider
-							adapter (Gemini, Gemma, OpenAI).</p>
+						<p>Cut redundant DynamoDB reads across the backend: built a
+							Redis cache for hot ID resolutions (username → user ID, user
+							→ collection, short IDs) with cache-first lookups, and
+							replaced N+1 per-item fetches in the feeds with batched reads
+							— dropping denormalized user fields that forced cascading
+							writes.</p>
+					</li>
+					<li>
+						<p>Led backend refactors that removed whole classes of bugs:
+							replaced read-modify-write with conditional updates across
+							19+ call sites (killing a race-condition source), swapped
+							string-matched errors for typed ones, and moved I/O behind
+							interfaces so services became unit-testable.</p>
 					</li>
 				</ul>
 			</li>
